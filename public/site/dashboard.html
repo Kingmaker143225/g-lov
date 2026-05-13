@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard — Yotrix Global</title>
+  <meta name="description" content="Your personalized study abroad dashboard with goals, services, and university recommendations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="dash-wrap">
+  <div class="dash-shell">
+    <aside class="sidebar">
+      <a href="./index.html" class="logo" style="padding:0 .5rem">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22V12"/><path d="M5 4l7 8 7-8"/></svg></span>
+        <span class="logo-text"><div class="logo-title">YOTRIX GLOBAL</div><div class="logo-sub">YOUR OPPORTUNITY MATRIX</div></span>
+      </a>
+      <nav class="side-nav">
+        <button class="active">🏠 Dashboard</button>
+        <button>📋 Applications</button>
+        <button>📖 Mentor</button>
+        <button>🧩 Services</button>
+        <button>📚 Resources</button>
+        <button>👛 Wallet</button>
+        <button>👤 Profile</button>
+        <button>⚙️ Settings</button>
+      </nav>
+      <div class="refer">
+        <div class="e">🎁</div>
+        <div class="t">Refer &amp; Earn</div>
+        <div class="d">Invite friends and earn exciting rewards!</div>
+        <button>Refer Now</button>
+      </div>
+    </aside>
+
+    <main class="dash-main">
+      <div class="topbar">
+        <div class="search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--muted-foreground)"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          <input placeholder="Search for universities, courses, services..." />
+        </div>
+        <button class="bell">🔔<span class="nb">2</span></button>
+        <div class="user-pill"><div><div class="name">tej</div><div class="pts">★ 50,000</div></div><div class="av"></div></div>
+      </div>
+
+      <div class="welcome-grid">
+        <div class="welcome">
+          <div style="position:relative;z-index:1;max-width:28rem">
+            <div class="who">Welcome back,</div>
+            <div class="name">tej! 👋</div>
+            <p class="sub">Your global journey begins with the right opportunities.</p>
+            <a href="./onboarding.html" class="btn-primary" style="margin-top:1.5rem">Explore Opportunities ✈️</a>
+          </div>
+          <img class="img" src="./assets/dashboard-hero.png" alt="" loading="lazy" />
+        </div>
+
+        <div class="card-soft progress-card">
+          <div class="h">My Progress</div>
+          <div style="display:flex;align-items:center;gap:1rem">
+            <div class="donut">
+              <svg viewBox="0 0 36 36" width="96" height="96">
+                <circle cx="18" cy="18" r="16" fill="none" stroke="oklch(0.92 0.01 255)" stroke-width="3"/>
+                <circle cx="18" cy="18" r="16" fill="none" stroke="oklch(0.7 0.21 42)" stroke-width="3" stroke-dasharray="80 100" stroke-linecap="round" pathLength="100"/>
+              </svg>
+              <div class="pct">80%</div>
+            </div>
+            <div><div style="font-weight:700">Profile</div><div style="font-size:.875rem;color:var(--muted-foreground)">Completed</div></div>
+          </div>
+          <div class="prog-list">
+            <div class="it"><span class="bub on"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span>Personal Information</div>
+            <div class="it"><span class="bub on"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span>Education Details</div>
+            <div class="it"><span class="bub on"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span>Test Scores</div>
+            <div class="it"><span class="bub on"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span>Documents</div>
+            <div class="it"><span class="bub off"></span>Work Experience</div>
+          </div>
+          <button class="outline-btn">Complete Profile →</button>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="card-soft wallet-card">
+          <div class="h">Wallet Balance</div>
+          <div class="wallet"><div class="em">👛</div><div class="cur">INR</div><div class="v">0</div></div>
+          <button class="outline-btn">Add Money</button>
+        </div>
+        <div class="card-soft wallet-card">
+          <div class="h" style="display:flex;justify-content:space-between"><span>Your Goals</span><span style="font-size:.875rem;color:var(--muted-foreground);font-weight:400"><b style="color:var(--foreground)">3</b> / 5 Completed</span></div>
+          <div class="bar-track"><div class="bar-fill"></div></div>
+          <div class="prog-list" style="margin-top:1rem">
+            <div class="it"><span class="bub on"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span>Shortlist 5 courses</div>
+            <div class="it"><span class="bub on"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span>Apply to 3 universities</div>
+            <div class="it"><span class="bub off"></span>Book a mentor session</div>
+            <div class="it"><span class="bub on"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg></span>Upload all documents</div>
+            <div class="it"><span class="bub off"></span>Receive an offer</div>
+          </div>
+        </div>
+        <div class="dark-card">
+          <div class="blur"></div>
+          <div style="position:relative">
+            <h3>Need Expert Guidance?</h3>
+            <p style="margin-top:.5rem;font-size:.875rem;color:color-mix(in oklab,var(--background) 70%,transparent)">Connect with our verified mentors and fast-track your journey.</p>
+            <div style="margin-top:1.25rem;display:flex">
+              <div style="height:2.5rem;width:2.5rem;border-radius:9999px;border:2px solid var(--foreground);background:var(--primary)"></div>
+              <div style="height:2.5rem;width:2.5rem;border-radius:9999px;border:2px solid var(--foreground);background:oklch(0.83 0.16 80);margin-left:-.5rem"></div>
+              <div style="height:2.5rem;width:2.5rem;border-radius:9999px;border:2px solid var(--foreground);background:oklch(0.7 0.18 15);margin-left:-.5rem"></div>
+              <div style="height:2.5rem;width:2.5rem;border-radius:9999px;border:2px solid var(--foreground);background:oklch(0.75 0.15 165);margin-left:-.5rem"></div>
+              <div style="margin-left:.75rem;align-self:center;font-size:.75rem"><b>4K+</b> Mentors</div>
+            </div>
+            <button class="btn-primary btn-block" style="margin-top:1.25rem">Find a Mentor →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-row">
+        <h2 style="font-size:1.25rem">Top Services for You</h2>
+        <a class="text-primary" style="font-size:.875rem">View all services →</a>
+      </div>
+      <div class="svc-grid">
+        <div class="card-soft svc"><div class="ic icon-blue">🎓</div><div class="t">University Application</div><div class="d">Apply to your dream universities hassle-free.</div><button class="a">Start Now →</button></div>
+        <div class="card-soft svc"><div class="ic icon-emerald">🛂</div><div class="t">Visa Process</div><div class="d">End-to-end visa application support.</div><button class="a">Start Now →</button></div>
+        <div class="card-soft svc"><div class="ic" style="background:oklch(0.96 0.04 80);color:oklch(0.65 0.16 70)">💰</div><div class="t">Education Loan</div><div class="d">Low-interest loans for your global education.</div><button class="a">Start Now →</button></div>
+        <div class="card-soft svc"><div class="ic" style="background:oklch(0.95 0.04 295);color:oklch(0.55 0.18 295)">📝</div><div class="t">SOP / LOR Evaluation</div><div class="d">Get your SOP &amp; LOR reviewed by experts.</div><button class="a">Start Now →</button></div>
+        <div class="card-soft svc"><div class="ic icon-orange">📊</div><div class="t">IELTS / TOEFL Training</div><div class="d">Prepare for your tests with expert guidance.</div><button class="a">Start Now →</button></div>
+        <div class="card-soft svc"><div class="ic" style="background:oklch(0.95 0.04 230);color:oklch(0.55 0.16 235)">✈️</div><div class="t">Flight Tickets</div><div class="d">Book your tickets at the best prices.</div><button class="a">Start Now →</button></div>
+        <div class="card-soft svc"><div class="ic" style="background:oklch(0.95 0.04 15);color:oklch(0.6 0.18 15)">🏠</div><div class="t">Accommodation &amp; SIM</div><div class="d">Find the best stays &amp; SIM options abroad.</div><button class="a">Start Now →</button></div>
+        <div class="card-soft svc"><div class="ic" style="background:oklch(0.95 0.04 310);color:oklch(0.55 0.18 310)">📜</div><div class="t">PR &amp; Work Permit</div><div class="d">Guidance for PR &amp; work permit applications.</div><button class="a">Start Now →</button></div>
+        <div class="card-soft svc"><div class="ic" style="background:oklch(0.95 0.04 195);color:oklch(0.55 0.13 195)">🚖</div><div class="t">Airport Pickup</div><div class="d">Hassle-free airport pickup in your city.</div><button class="a">Start Now →</button></div>
+        <div class="card-soft svc"><div class="ic" style="background:oklch(0.94 0.005 80);color:oklch(0.4 0.02 80)">📁</div><div class="t">Legal Documentation</div><div class="d">Assistance with all legal documents.</div><button class="a">Start Now →</button></div>
+      </div>
+
+      <div class="bottom-grid">
+        <div class="card-soft" style="padding:1.5rem">
+          <div style="margin-bottom:1rem;font-weight:700;display:flex;gap:.5rem;align-items:center">✨ Recommended for You</div>
+          <div class="uni-grid">
+            <div class="uni"><div class="cover"></div><div class="body"><div class="t">University of Toronto</div><div class="c">Canada</div><div class="r">QS Ranking #21</div><button class="btn-ghost" style="width:100%;margin-top:.75rem;padding:.375rem;font-size:.75rem">View Details</button></div></div>
+            <div class="uni"><div class="cover"></div><div class="body"><div class="t">The University of Melbourne</div><div class="c">Australia</div><div class="r">QS Ranking #14</div><button class="btn-ghost" style="width:100%;margin-top:.75rem;padding:.375rem;font-size:.75rem">View Details</button></div></div>
+            <div class="uni"><div class="cover"></div><div class="body"><div class="t">University College London</div><div class="c">UK</div><div class="r">QS Ranking #9</div><button class="btn-ghost" style="width:100%;margin-top:.75rem;padding:.375rem;font-size:.75rem">View Details</button></div></div>
+          </div>
+        </div>
+        <div class="card-soft" style="padding:1.5rem">
+          <div style="margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center"><span style="font-weight:700">Latest Updates</span><a class="text-primary" style="font-size:.75rem">View all</a></div>
+          <div class="update-row"><div class="av"></div><div><div class="t">University of Melbourne application deadline extended</div><div class="w">2h ago</div></div></div>
+          <div class="update-row"><div class="av"></div><div><div class="t">New scholarship available for Indian students</div><div class="w">1d ago</div></div></div>
+          <div class="update-row"><div class="av"></div><div><div class="t">Webinar: Study in Canada – Step by Step Guide</div><div class="w">2d ago</div></div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

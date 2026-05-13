@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create your account — Yotrix Global</title>
+  <meta name="description" content="Join thousands of students discovering top universities and building dream careers abroad with Yotrix Global." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="signup-grid">
+    <div class="signup-left bg-cream-grad">
+      <a href="./index.html" class="logo">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22V12"/><path d="M5 4l7 8 7-8"/></svg></span>
+        <span class="logo-text"><div class="logo-title">YOTRIX GLOBAL</div><div class="logo-sub">YOUR OPPORTUNITY MATRIX</div></span>
+      </a>
+      <h1>Your global future<br/>starts <span class="alt">here.</span></h1>
+      <p class="lead">Join thousands of students who are discovering top universities and building their dream careers abroad.</p>
+      <div class="signup-image"><img src="./assets/signup-student.png" alt="Student" loading="lazy" /></div>
+      <div class="card-soft perks-card">
+        <div class="head">Everything you need,<br/>all in one place</div>
+        <div class="perks">
+          <div class="perk"><div class="pi">🎓</div><div class="pt">Find &amp; compare</div><div class="ps">universities</div></div>
+          <div class="perk"><div class="pi">📄</div><div class="pt">Apply to top</div><div class="ps">courses</div></div>
+          <div class="perk"><div class="pi">💬</div><div class="pt">Expert mentor</div><div class="ps">guidance</div></div>
+          <div class="perk"><div class="pi">🛡️</div><div class="pt">Secure &amp; easy</div><div class="ps">document upload</div></div>
+          <div class="perk"><div class="pi">📈</div><div class="pt">Track your</div><div class="ps">applications</div></div>
+          <div class="perk"><div class="pi">🎁</div><div class="pt">Exciting rewards</div><div class="ps">&amp; benefits</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="signup-right">
+      <div class="card-soft signup-card">
+        <h2>Create your account</h2>
+        <div class="underline"></div>
+        <div class="row-between" style="margin-top:1.5rem;font-size:.875rem;">
+          <span class="text-muted">Already have an account?</span>
+          <a href="./signup.html" class="text-primary">Log in</a>
+        </div>
+        <div style="display:grid;gap:.75rem;margin-top:1.25rem;">
+          <button class="btn-ghost btn-block"><span style="font-size:1.125rem">G</span> Continue with Google</button>
+          <button class="btn-ghost btn-block"><span style="font-size:1.125rem"></span> Continue with Apple</button>
+        </div>
+        <div class="divider"><div class="line"></div> or sign up with email <div class="line"></div></div>
+
+        <form style="display:grid;gap:1rem;" onsubmit="event.preventDefault();window.location.href='./onboarding.html';">
+          <div class="field"><label>Full Name</label><input class="input-base" placeholder="Enter your full name" /></div>
+          <div class="field"><label>Email Address</label><input type="email" class="input-base" placeholder="Enter your email address" /></div>
+          <div class="field"><label>Mobile Number</label>
+            <div class="phone"><span style="font-size:.875rem">🇮🇳 +91</span><div style="height:1.5rem;width:1px;background:var(--border);"></div><input placeholder="Enter your mobile number" /></div>
+          </div>
+          <div class="field"><label>Password</label><input type="password" class="input-base" placeholder="Create a strong password" />
+            <div class="strength"><div class="on"></div><div class="on"></div><div></div><div></div><div></div></div>
+            <p style="margin-top:.375rem;font-size:.75rem;color:var(--muted-foreground)">Use 8+ characters with a mix of letters, numbers &amp; symbols.</p>
+          </div>
+          <label style="display:flex;gap:.5rem;align-items:flex-start;font-size:.875rem;">
+            <input type="checkbox" checked style="margin-top:.25rem;accent-color:var(--primary)" />
+            <span>I agree to the <span class="text-primary">Terms of Use</span> and <span class="text-primary">Privacy Policy</span></span>
+          </label>
+          <button type="submit" class="btn-primary btn-block btn-lg" style="margin-top:.5rem">🛡️ Create Account</button>
+        </form>
+
+        <div class="signup-trust">
+          <div><div style="margin:0 auto .25rem;height:2.5rem;width:2.5rem;display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--primary-soft);font-size:1.125rem">🛡️</div><div style="font-size:.75rem;font-weight:600">Secure</div><div style="font-size:11px;color:var(--muted-foreground)">Your data is 100% protected</div></div>
+          <div><div style="margin:0 auto .25rem;height:2.5rem;width:2.5rem;display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--primary-soft);font-size:1.125rem">🔒</div><div style="font-size:.75rem;font-weight:600">Trusted by</div><div style="font-size:11px;color:var(--muted-foreground)">10K+ students worldwide</div></div>
+          <div><div style="margin:0 auto .25rem;height:2.5rem;width:2.5rem;display:flex;align-items:center;justify-content:center;border-radius:9999px;background:var(--primary-soft);font-size:1.125rem">🎧</div><div style="font-size:.75rem;font-weight:600">24/7 Support</div><div style="font-size:11px;color:var(--muted-foreground)">We're here to help</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

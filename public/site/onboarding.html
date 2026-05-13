@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Get Started — Yotrix Global Onboarding</title>
+  <meta name="description" content="Tell us about your study level and preferred countries to get personalized matches." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-cream-grad">
+  <div class="onb">
+    <a href="./index.html" class="logo">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22V12"/><path d="M5 4l7 8 7-8"/></svg></span>
+      <span class="logo-text"><div class="logo-title">YOTRIX GLOBAL</div><div class="logo-sub">YOUR OPPORTUNITY MATRIX</div></span>
+    </a>
+
+    <div class="card-soft onb-card">
+      <!-- Step 1 -->
+      <section data-step="1">
+        <h1>Level of study</h1>
+        <p class="sub">Pick your current level of study</p>
+        <div class="bar"></div>
+        <div class="levels" id="levels">
+          <button class="level" data-level="10"><div class="ico">🎓</div><div class="lbl">10th Grade</div><div class="check"></div></button>
+          <button class="level" data-level="12"><div class="ico">📖</div><div class="lbl">12th Grade</div><div class="check"></div></button>
+          <button class="level" data-level="deg"><div class="ico">📜</div><div class="lbl">Degree</div><div class="check"></div></button>
+          <button class="level" data-level="eng"><div class="ico">⚙️</div><div class="lbl">Engineering</div><div class="check"></div></button>
+          <button class="level" data-level="mas"><div class="ico">🏆</div><div class="lbl">Masters</div><div class="check"></div></button>
+        </div>
+      </section>
+
+      <!-- Step 2 -->
+      <section data-step="2" hidden>
+        <div class="step2">
+          <div>
+            <h1 id="step2Title">Preferred country of study</h1>
+            <p class="sub" id="step2Sub">Pick up to 6 countries of your choice</p>
+            <div class="tabs">
+              <button id="tabDom">Domestic</button>
+              <button id="tabInt" class="active">🌍 International</button>
+            </div>
+            <div class="chips" id="chips"></div>
+            <div class="picks-card" id="picksCard" hidden>
+              <div class="picks-head"><span>Your selected <span id="pickKind">countries</span></span><span class="count"><span id="pickCount">0</span> selected</span></div>
+              <div id="pickList"></div>
+            </div>
+          </div>
+          <div class="map-side">
+            <img id="mapImg" src="./assets/map-international.png" alt="Illustrated map" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 3 -->
+      <section data-step="3" hidden>
+        <h1>Your goals</h1>
+        <p class="sub">Select what matters most to you (pick any)</p>
+        <div class="goals">
+          <label class="card-soft goal"><input type="checkbox" checked /><span>Top-ranked universities</span></label>
+          <label class="card-soft goal"><input type="checkbox" checked /><span>Scholarships &amp; funding</span></label>
+          <label class="card-soft goal"><input type="checkbox" checked /><span>Affordable tuition</span></label>
+          <label class="card-soft goal"><input type="checkbox" checked /><span>Post-study work options</span></label>
+          <label class="card-soft goal"><input type="checkbox" checked /><span>Strong career outcomes</span></label>
+          <label class="card-soft goal"><input type="checkbox" checked /><span>STEM-focused programs</span></label>
+        </div>
+      </section>
+
+      <!-- Step 4 -->
+      <section data-step="4" hidden>
+        <h1>Almost done!</h1>
+        <p class="sub">Confirm your preferences and we'll build your matches.</p>
+        <div class="confirm">
+          <div class="confirm-row"><span class="k">Level of study</span><span class="v" id="sumLevel">—</span></div>
+          <div class="confirm-row"><span class="k">Mode</span><span class="v" id="sumMode">International</span></div>
+          <div class="confirm-row"><span class="k">Picks</span><span class="v" id="sumPicks">—</span></div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <div class="onb-foot">
+        <button class="icon-btn" id="backBtn" aria-label="Back">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5m6 6l-6-6 6-6"/></svg>
+        </button>
+        <div class="dots" id="dots"></div>
+        <button class="btn-primary" id="nextBtn" style="padding:.75rem 2rem">Next
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const TOTAL = 4;
+    let step = 1;
+    let level = '12';
+    let tab = 'international';
+    let picks = ['Canada 🇨🇦','Germany 🇩🇪','Ireland 🇮🇪'];
+
+    const intCountries = ["Australia 🇦🇺","Canada 🇨🇦","New Zealand 🇳🇿","United Kingdom 🇬🇧","United States 🇺🇸","Germany 🇩🇪","Ireland 🇮🇪","France 🇫🇷","Netherlands 🇳🇱","Spain 🇪🇸","Switzerland 🇨🇭","Sweden 🇸🇪"];
+    const states = ["Andhra Pradesh","Delhi","Karnataka","Kerala","Tamil Nadu","Telangana","Maharashtra","Gujarat"];
+
+    const levelLabels = {'10':'10th Grade','12':'12th Grade','deg':'Degree','eng':'Engineering','mas':'Masters'};
+
+    function renderLevels() {
+      document.querySelectorAll('#levels .level').forEach(b => {
+        const active = b.dataset.level === level;
+        b.classList.toggle('active', active);
+        b.querySelector('.check').innerHTML = active
+          ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>'
+          : '';
+      });
+    }
+    document.querySelectorAll('#levels .level').forEach(b => b.addEventListener('click', () => { level = b.dataset.level; renderLevels(); }));
+
+    function renderStep2() {
+      document.getElementById('step2Title').textContent = 'Preferred ' + (tab === 'international' ? 'country' : 'state') + ' of study';
+      document.getElementById('step2Sub').textContent = 'Pick up to ' + (tab === 'international' ? '6 countries' : '3 states') + ' of your choice';
+      document.getElementById('tabDom').classList.toggle('active', tab==='domestic');
+      document.getElementById('tabInt').classList.toggle('active', tab==='international');
+      document.getElementById('mapImg').src = tab === 'international' ? './assets/map-international.png' : './assets/map-domestic.png';
+      const list = tab === 'international' ? intCountries : states;
+      const chips = document.getElementById('chips');
+      chips.innerHTML = '';
+      list.forEach(c => {
+        const btn = document.createElement('button');
+        btn.className = 'chip' + (picks.includes(c) ? ' active' : '');
+        btn.innerHTML = c + (picks.includes(c) ? ' <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>' : '');
+        btn.addEventListener('click', () => togglePick(c));
+        chips.appendChild(btn);
+      });
+      const pc = document.getElementById('picksCard');
+      pc.hidden = picks.length === 0;
+      document.getElementById('pickKind').textContent = tab === 'international' ? 'countries' : 'states';
+      document.getElementById('pickCount').textContent = picks.length;
+      const pl = document.getElementById('pickList');
+      pl.innerHTML = '';
+      picks.forEach((p, i) => {
+        const row = document.createElement('div');
+        row.className = 'pick-row';
+        row.innerHTML = '<div class="lhs"><span class="pick-num">'+(i+1)+'</span><span style="font-size:.875rem;font-weight:500">'+p+'</span></div><button class="pick-x" aria-label="remove">✕</button>';
+        row.querySelector('.pick-x').addEventListener('click', () => togglePick(p));
+        pl.appendChild(row);
+      });
+    }
+    function togglePick(c) {
+      if (picks.includes(c)) picks = picks.filter(x => x !== c);
+      else {
+        const max = tab === 'international' ? 6 : 3;
+        if (picks.length < max) picks.push(c);
+      }
+      renderStep2();
+    }
+    document.getElementById('tabDom').addEventListener('click', () => { tab='domestic'; picks=[]; renderStep2(); });
+    document.getElementById('tabInt').addEventListener('click', () => { tab='international'; picks=[]; renderStep2(); });
+
+    function renderDots() {
+      const d = document.getElementById('dots');
+      d.innerHTML = '';
+      for (let n=1; n<=TOTAL; n++) {
+        const div = document.createElement('div');
+        div.className = 'dot-step' + (n===step ? ' active' : n<step ? ' done' : '');
+        div.textContent = n;
+        d.appendChild(div);
+        if (n<TOTAL) {
+          const line = document.createElement('div');
+          line.className = 'dot-line' + (n<step ? ' done' : '');
+          d.appendChild(line);
+        }
+      }
+    }
+    function renderSummary() {
+      document.getElementById('sumLevel').textContent = levelLabels[level] || '';
+      document.getElementById('sumMode').textContent = tab === 'international' ? 'International' : 'Domestic';
+      document.getElementById('sumPicks').textContent = picks.join(', ') || '—';
+    }
+    function showStep(n) {
+      step = n;
+      document.querySelectorAll('section[data-step]').forEach(s => s.hidden = +s.dataset.step !== n);
+      renderDots();
+      const next = document.getElementById('nextBtn');
+      if (n === TOTAL) {
+        next.innerHTML = 'Finish 🎉';
+        next.onclick = () => window.location.href = './success.html';
+        renderSummary();
+      } else {
+        next.innerHTML = 'Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-6-6l6 6-6 6"/></svg>';
+        next.onclick = () => showStep(step + 1);
+      }
+      if (n === 2) renderStep2();
+    }
+    document.getElementById('backBtn').addEventListener('click', () => {
+      if (step > 1) showStep(step - 1);
+      else window.location.href = './index.html';
+    });
+
+    renderLevels();
+    showStep(1);
+  </script>
+</body>
+</html>
